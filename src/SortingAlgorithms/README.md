@@ -107,7 +107,7 @@ x.OrderBy(x => x % 2, new QuickSort<int>()).ThenBy(x => x);
 | Name                                                                          |                  Best                   |                 Average                 |                  Worst                  |
 |-------------------------------------------------------------------------------|:---------------------------------------:|:---------------------------------------:|:---------------------------------------:|
 | Assumption Sort                                                               |             $\mathcal O(1)$             |             $\mathcal O(1)$             |             $\mathcal O(1)$             |
-| [Bogonbogosort](https://www.dangermouse.net/esoteric/bogobogosort.html)       |                   $-$                   |                   $-$                   |         $\mathcal O(n!^{n-k})$          |
+| [Bogobogosort](https://www.dangermouse.net/esoteric/bogobogosort.html)        |                   $-$                   |                   $-$                   |         $\mathcal O(n!^{n-k})$          |
 | [Bogosort](https://en.wikipedia.org/wiki/Bogosort)                            |               $\Omega(n)$               |         $\mathcal O(n\cdot n!)$         |          $\mathcal O(\infty)$           |
 | [Bozosort](https://en.wikipedia.org/wiki/Bogosort#Related_algorithms)         |             $\mathcal O(n)$             |            $\mathcal O(n!)$             |          $\mathcal O(\infty)$           |
 | [I Can't Believe It Can Sort](https://arxiv.org/abs/2110.01111)               |            $\mathcal O(n^2)$            |            $\mathcal O(n^2)$            |            $\mathcal O(n^2)$            |
