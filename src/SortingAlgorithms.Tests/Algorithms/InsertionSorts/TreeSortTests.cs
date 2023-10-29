@@ -35,4 +35,13 @@ public sealed class TreeSortTests
 		/// <inheritdoc />
 		protected override Type Type => typeof(CartesianTreeSort<>);
 	}
+
+	/// <summary>
+	/// Tests for <see cref="RedBlackTreeSort{TKey}"/>.
+	/// </summary>
+	public sealed class RedBlackTreeSortTests : SortingAlgorithmTestBase<RedBlackTreeSortTests>, ISortingAlgorithmTest
+	{
+		/// <inheritdoc />
+		protected override Type Type => typeof(RedBlackTreeSort<>);
+	}
 }
