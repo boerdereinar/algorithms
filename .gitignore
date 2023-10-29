@@ -1,0 +1,10 @@
+# IDE
+.vs/
+.idea/
+.vscode/
+
+*.user
+
+# Build
+obj/
+bin/
