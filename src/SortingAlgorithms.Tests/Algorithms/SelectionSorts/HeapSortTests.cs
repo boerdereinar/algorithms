@@ -44,4 +44,13 @@ public sealed class HeapSortTests
 		/// <inheritdoc />
 		protected override Type Type => typeof(BinomialHeapSort<>);
 	}
+
+	/// <summary>
+	/// Tests for <see cref="LeftistHeapSort{TKey}"/>.
+	/// </summary>
+	public sealed class LeftistHeapSortTests : SortingAlgorithmTestBase<LeftistHeapSortTests>, ISortingAlgorithmTest
+	{
+		/// <inheritdoc />
+		protected override Type Type => typeof(LeftistHeapSort<>);
+	}
 }

@@ -57,3 +57,13 @@ public sealed class BinomialHeapSort<TKey> : HeapSort<TKey, BinomialHeap>
 	/// <inheritdoc cref="HeapSort{TKey,THeap}.Default"/>
 	public static new ISortingAlgorithm<TKey> Default { get; } = new BinomialHeapSort<TKey>();
 }
+
+/// <summary>
+/// Represents the <a href="https://en.wikipedia.org/wiki/Leftist_tree">Leftist Heapsort</a> sorting algorithm.
+/// </summary>
+/// <typeparam name="TKey">The type of elements to be sorted.</typeparam>
+public sealed class LeftistHeapSort<TKey> : HeapSort<TKey, LeftistHeap>
+{
+	/// <inheritdoc cref="HeapSort{TKey,THeap}.Default"/>
+	public static new ISortingAlgorithm<TKey> Default { get; } = new LeftistHeapSort<TKey>();
+}
