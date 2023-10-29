@@ -9,6 +9,25 @@ namespace SortingAlgorithms.Utilities;
 internal static class KeyedArrayExtensions
 {
 	/// <summary>
+	/// Checks if the elements of a <see cref="KeyedArray{TElement,TKey}"/> are sorted.
+	/// </summary>
+	/// <param name="source">A <see cref="KeyedArray{TElement,TKey}"/> to check.</param>
+	/// <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
+	/// <typeparam name="TKey">The type of key to compare elements by.</typeparam>
+	/// <returns><c>true</c> if the elements are sorted, <c>false</c> otherwise.</returns>
+	public static bool IsSorted<TSource, TKey>(this KeyedArray<TSource, TKey> source)
+	{
+		if (source.Length <= 1)
+			return true;
+
+		for (var i = 1; i < source.Length; i++)
+			if (source.Compare(i - 1, i) > 0)
+				return false;
+
+		return true;
+	}
+
+	/// <summary>
 	/// Returns the maximum and minimum key in a <see cref="KeyedArray{TElement,TKey}"/>.
 	/// </summary>
 	/// <param name="source">A <see cref="KeyedArray{TElement,TKey}"/> to determine the maximum and minimum key of.</param>
