@@ -11,28 +11,28 @@ public sealed class QuantumBogoSortTests : SortingAlgorithmTestBase<QuantumBogoS
 	protected override Type Type => typeof(QuantumBogoSort<>);
 
 	/// <inheritdoc />
-	public override async Task SortComposite_SortsCorrectly(IEnumerable<int> source, IEnumerable<int> expected, bool reverse)
+	public override void SortComposite_SortsCorrectly(IEnumerable<int> source, IEnumerable<int> expected, bool reverse)
 	{
 		var sourceArray = source.ToArray();
 		var expectedArray = expected.ToArray();
 
 		if (sourceArray.SequenceEqual(expectedArray))
-			await base.SortComposite_SortsCorrectly(sourceArray, expectedArray, reverse);
+			base.SortComposite_SortsCorrectly(sourceArray, expectedArray, reverse);
 		else
-			await Assert.ThrowsAsync<EndOfTheUniverseException>(() =>
+			Assert.Throws<EndOfTheUniverseException>(() =>
 				base.SortComposite_SortsCorrectly(sourceArray, expectedArray, reverse));
 	}
 
 	/// <inheritdoc />
-	protected override async Task SortTestBase<TKey>(IEnumerable<TKey> source, IEnumerable<TKey> expected, bool reverse)
+	protected override void SortTestBase<TKey>(IEnumerable<TKey> source, IEnumerable<TKey> expected, bool reverse)
 	{
 		var sourceArray = source.ToArray();
 		var expectedArray = expected.ToArray();
 
 		if (sourceArray.SequenceEqual(expectedArray))
-			await base.SortTestBase(sourceArray, expectedArray, reverse);
+			base.SortTestBase(sourceArray, expectedArray, reverse);
 		else
-			await Assert.ThrowsAsync<EndOfTheUniverseException>(() =>
+			Assert.Throws<EndOfTheUniverseException>(() =>
 				base.SortTestBase(sourceArray, expectedArray, reverse));
 	}
 }

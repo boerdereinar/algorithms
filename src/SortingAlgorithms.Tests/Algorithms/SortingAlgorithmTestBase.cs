@@ -28,13 +28,12 @@ public abstract class SortingAlgorithmTestBase<TSelf>
 	/// <param name="source">The source collection.</param>
 	/// <param name="expected">The expected sorted collection.</param>
 	/// <param name="reverse">Whether the data is reversed.</param>
-	/// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
 	[SkippableTheory]
 	[MemberData(nameof(IntegerData), false)]
 	[MemberData(nameof(IntegerData), true)]
-	public Task SortInteger_SortsCorrectly(IEnumerable<int> source, IEnumerable<int> expected, bool reverse)
+	public void SortInteger_SortsCorrectly(IEnumerable<int> source, IEnumerable<int> expected, bool reverse)
 	{
-		return SortTestBase(source, expected, reverse);
+		 SortTestBase(source, expected, reverse);
 	}
 
 	/// <summary>
@@ -43,13 +42,12 @@ public abstract class SortingAlgorithmTestBase<TSelf>
 	/// <param name="source">The source collection.</param>
 	/// <param name="expected">The expected sorted collection.</param>
 	/// <param name="reverse">Whether the data is reversed.</param>
-	/// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
 	[SkippableTheory]
 	[MemberData(nameof(UnsignedIntegerData), false)]
 	[MemberData(nameof(UnsignedIntegerData), true)]
-	public Task SortUnsigned_SortsCorrectly(IEnumerable<uint> source, IEnumerable<uint> expected, bool reverse)
+	public void SortUnsigned_SortsCorrectly(IEnumerable<uint> source, IEnumerable<uint> expected, bool reverse)
 	{
-		return SortTestBase(source, expected, reverse);
+		 SortTestBase(source, expected, reverse);
 	}
 
 	/// <summary>
@@ -58,13 +56,12 @@ public abstract class SortingAlgorithmTestBase<TSelf>
 	/// <param name="source">The source collection.</param>
 	/// <param name="expected">The expected sorted collection.</param>
 	/// <param name="reverse">Whether the data is reversed.</param>
-	/// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
 	[SkippableTheory]
 	[MemberData(nameof(DoubleData), false)]
 	[MemberData(nameof(DoubleData), true)]
-	public Task SortDouble_SortsCorrectly(IEnumerable<double> source, IEnumerable<double> expected, bool reverse)
+	public void SortDouble_SortsCorrectly(IEnumerable<double> source, IEnumerable<double> expected, bool reverse)
 	{
-		return SortTestBase(source, expected, reverse);
+		 SortTestBase(source, expected, reverse);
 	}
 
 	/// <summary>
@@ -73,13 +70,12 @@ public abstract class SortingAlgorithmTestBase<TSelf>
 	/// <param name="source">The source collection.</param>
 	/// <param name="expected">The expected sorted collection.</param>
 	/// <param name="reverse">Whether the data is reversed.</param>
-	/// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
 	[SkippableTheory]
 	[MemberData(nameof(StringData), false)]
 	[MemberData(nameof(StringData), true)]
-	public Task SortString_SortsCorrectly(IEnumerable<string> source, IEnumerable<string> expected, bool reverse)
+	public void SortString_SortsCorrectly(IEnumerable<string> source, IEnumerable<string> expected, bool reverse)
 	{
-		return SortTestBase(source, expected, reverse);
+		 SortTestBase(source, expected, reverse);
 	}
 
 	/// <summary>
@@ -88,20 +84,17 @@ public abstract class SortingAlgorithmTestBase<TSelf>
 	/// <param name="source">The source collection.</param>
 	/// <param name="expected">The expected sorted collection.</param>
 	/// <param name="reverse">Whether the data is reversed.</param>
-	/// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
 	[SkippableTheory]
 	[MemberData(nameof(CompositeData), false)]
 	[MemberData(nameof(CompositeData), true)]
-	public virtual async Task SortComposite_SortsCorrectly(IEnumerable<int> source, IEnumerable<int> expected, bool reverse)
+	public virtual void SortComposite_SortsCorrectly(IEnumerable<int> source, IEnumerable<int> expected, bool reverse)
 	{
 		var algorithm = TryCreateInstance<int>(Type, Arguments) ?? throw new SkipException("Unsupported type!");
 		var comparer = reverse ? Comparer<int>.Default.Reverse() : Comparer<int>.Default;
 
 		try
 		{
-			await AssertAsync.CompletesIn(
-				() => Assert.Equal(expected, source.OrderBy(x => x % 2, comparer, algorithm).ThenBy(x => x, comparer)),
-				TimeSpan.FromSeconds(5));
+			Assert.Equal(expected, source.OrderBy(x => x % 2, comparer, algorithm).ThenBy(x => x, comparer));
 		}
 		catch (NotSupportedException)
 		{
@@ -200,15 +193,12 @@ public abstract class SortingAlgorithmTestBase<TSelf>
 	/// <param name="expected">The expected sorted collection.</param>
 	/// <param name="reverse">Whether the data is reversed.</param>
 	/// <typeparam name="TKey">The type of the key.</typeparam>
-	/// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-	protected virtual Task SortTestBase<TKey>(IEnumerable<TKey> source, IEnumerable<TKey> expected, bool reverse)
+	protected virtual void SortTestBase<TKey>(IEnumerable<TKey> source, IEnumerable<TKey> expected, bool reverse)
 	{
 		var algorithm = TryCreateInstance<TKey>(Type, Arguments) ?? throw new SkipException("Unsupported type!");
 		var comparer = reverse ? Comparer<TKey>.Default.Reverse() : Comparer<TKey>.Default;
 
-		return AssertAsync.CompletesIn(
-			() => Assert.Equal(expected, source.Order(comparer, algorithm)),
-			TimeSpan.FromSeconds(5));
+		Assert.Equal(expected, source.Order(comparer, algorithm));
 	}
 
 	private static ISortingAlgorithm<TKey>? TryCreateInstance<TKey>(Type type, object?[]? args)

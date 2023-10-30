@@ -66,13 +66,12 @@ public static class LsdRadixSortTests
 		/// <param name="source">The source collection.</param>
 		/// <param name="expected">The expected sorted collection.</param>
 		/// <param name="reverse">Whether the data is reversed.</param>
-		/// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
 		[SkippableTheory]
 		[MemberData(nameof(Half), false)]
 		[MemberData(nameof(Half), true)]
-		public Task SortHalf_SortsCorrectly(IEnumerable<Half> source, IEnumerable<Half> expected, bool reverse)
+		public void SortHalf_SortsCorrectly(IEnumerable<Half> source, IEnumerable<Half> expected, bool reverse)
 		{
-			return SortTestBase(source, expected, reverse);
+			SortTestBase(source, expected, reverse);
 		}
 
 		/// <summary>
@@ -81,13 +80,12 @@ public static class LsdRadixSortTests
 		/// <param name="source">The source collection.</param>
 		/// <param name="expected">The expected sorted collection.</param>
 		/// <param name="reverse">Whether the data is reversed.</param>
-		/// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
 		[SkippableTheory]
 		[MemberData(nameof(Float), false)]
 		[MemberData(nameof(Float), true)]
-		public Task SortFloat_SortsCorrectly(IEnumerable<float> source, IEnumerable<float> expected, bool reverse)
+		public void SortFloat_SortsCorrectly(IEnumerable<float> source, IEnumerable<float> expected, bool reverse)
 		{
-			return SortTestBase(source, expected, reverse);
+			SortTestBase(source, expected, reverse);
 		}
 
 		/// <summary>
