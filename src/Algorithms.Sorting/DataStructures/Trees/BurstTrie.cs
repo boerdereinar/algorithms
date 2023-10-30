@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Diagnostics.CodeAnalysis;
-using Algorithms.Sorting.Algorithms.DistributionSorts;
-using Algorithms.Sorting.Algorithms.HybridSorts;
-using Algorithms.Sorting.Algorithms.InsertionSorts;
+using Algorithms.Sorting.Algorithms.Distribution;
+using Algorithms.Sorting.Algorithms.Hybrid;
+using Algorithms.Sorting.Algorithms.Insertion;
 using Algorithms.Sorting.Sorting;
 using Algorithms.Sorting.Utilities;
 
