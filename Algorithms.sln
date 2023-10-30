@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingAlgorithms", "src/SortingAlgorithms/SortingAlgorithms.csproj", "{6757BD43-2F43-4B79-A846-DD978A342D05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Sorting", "src/Algorithms.Sorting/Algorithms.Sorting.csproj", "{6757BD43-2F43-4B79-A846-DD978A342D05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingAlgorithms.Tests", "src/SortingAlgorithms.Tests/SortingAlgorithms.Tests.csproj", "{D717C622-309D-431C-A7B0-5EAD443FAB27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Sorting.Tests", "src/Algorithms.Sorting.Tests/Algorithms.Sorting.Tests.csproj", "{D717C622-309D-431C-A7B0-5EAD443FAB27}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{28B50868-0B38-4F6F-90F8-713C3C8C9E95}"
 	ProjectSection(SolutionItems) = preProject
