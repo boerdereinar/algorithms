@@ -87,11 +87,6 @@ file sealed class BurstTrie<T> : IEnumerable<T>
 	/// <summary>
 	/// Initializes a new instance of the <see cref="BurstTrie{TSource}"/> class.
 	/// </summary>
-	public BurstTrie() : this(4, 4, 32) { }
-
-	/// <summary>
-	/// Initializes a new instance of the <see cref="BurstTrie{TSource}"/> class.
-	/// </summary>
 	/// <param name="initialSize">Initial size of the buckets.</param>
 	/// <param name="growthFactor">Growth factor of the buckets.</param>
 	/// <param name="threshold">Threshold of the buckets.</param>
