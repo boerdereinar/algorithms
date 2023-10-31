@@ -1,8 +1,4 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Sorting", "src/Algorithms.Sorting/Algorithms.Sorting.csproj", "{6757BD43-2F43-4B79-A846-DD978A342D05}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Sorting.Tests", "src/Algorithms.Sorting.Tests/Algorithms.Sorting.Tests.csproj", "{D717C622-309D-431C-A7B0-5EAD443FAB27}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{28B50868-0B38-4F6F-90F8-713C3C8C9E95}"
 	ProjectSection(SolutionItems) = preProject
 		stylecop.json = stylecop.json
@@ -13,13 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		src/Directory.Build.props = src/Directory.Build.props
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Common", "src/Algorithms.Common/Algorithms.Common.csproj", "{D0D05A95-0FDC-43EC-B036-A577E88DB25C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Common.Tests", "src/Algorithms.Common.Tests/Algorithms.Common.Tests.csproj", "{75AA65AA-ADCB-4E65-B637-29BDD106BFE8}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.DataStructures", "src/Algorithms.DataStructures/Algorithms.DataStructures.csproj", "{F69137C5-F882-4284-93AA-1A0AAF80FE2E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.DataStructures.Tests", "src/Algorithms.DataStructures.Tests/Algorithms.DataStructures.Tests.csproj", "{6D4E9BE1-6D7C-4480-8643-D268396588F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Common", "src/Algorithms.Common/Algorithms.Common.csproj", "{D0D05A95-0FDC-43EC-B036-A577E88DB25C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Sorting", "src/Algorithms.Sorting/Algorithms.Sorting.csproj", "{6757BD43-2F43-4B79-A846-DD978A342D05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Common.Tests", "src/Algorithms.Common.Tests/Algorithms.Common.Tests.csproj", "{75AA65AA-ADCB-4E65-B637-29BDD106BFE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Sorting.Tests", "src/Algorithms.Sorting.Tests/Algorithms.Sorting.Tests.csproj", "{D717C622-309D-431C-A7B0-5EAD443FAB27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
