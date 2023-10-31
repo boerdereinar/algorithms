@@ -1,5 +1,6 @@
+using Algorithms.Common.Collections;
+using Algorithms.DataStructures.Heaps;
 using Algorithms.Sorting.Algorithms.Insertion;
-using Algorithms.Sorting.DataStructures.Heaps;
 using Algorithms.Sorting.Sorting;
 
 namespace Algorithms.Sorting.Algorithms.Hybrid;

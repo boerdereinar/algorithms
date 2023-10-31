@@ -1,5 +1,7 @@
+using Algorithms.Common.Collections;
+using Algorithms.Common.Comparers;
+using Algorithms.Common.Utilities;
 using Algorithms.Sorting.Sorting;
-using Algorithms.Sorting.Utilities;
 
 namespace Algorithms.Sorting.Algorithms.Hybrid;
 

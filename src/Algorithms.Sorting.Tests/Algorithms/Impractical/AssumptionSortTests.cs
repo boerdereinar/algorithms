@@ -1,7 +1,7 @@
 using System.Numerics;
+using Algorithms.Common.Utilities;
 using Algorithms.Sorting.Algorithms.Impractical;
 using Algorithms.Sorting.Tests.TestUtilities;
-using Algorithms.Sorting.Utilities;
 
 namespace Algorithms.Sorting.Tests.Algorithms.Impractical;
 

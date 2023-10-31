@@ -1,5 +1,5 @@
 using System.Numerics;
-using Algorithms.Sorting.Utilities;
+using Algorithms.Common.Utilities;
 
 namespace Algorithms.Sorting.Tests.TestUtilities;
 

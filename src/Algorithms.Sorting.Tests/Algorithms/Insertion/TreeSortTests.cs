@@ -1,5 +1,5 @@
+using Algorithms.DataStructures.Trees;
 using Algorithms.Sorting.Algorithms.Insertion;
-using Algorithms.Sorting.DataStructures.Trees;
 
 namespace Algorithms.Sorting.Tests.Algorithms.Insertion;
 

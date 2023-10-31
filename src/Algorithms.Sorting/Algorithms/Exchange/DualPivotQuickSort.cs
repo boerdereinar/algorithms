@@ -1,3 +1,4 @@
+using Algorithms.Common.Collections;
 using Algorithms.Sorting.Sorting;
 
 namespace Algorithms.Sorting.Algorithms.Exchange;

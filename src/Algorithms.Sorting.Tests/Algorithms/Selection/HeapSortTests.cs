@@ -1,5 +1,5 @@
+using Algorithms.DataStructures.Heaps;
 using Algorithms.Sorting.Algorithms.Selection;
-using Algorithms.Sorting.DataStructures.Heaps;
 
 namespace Algorithms.Sorting.Tests.Algorithms.Selection;
 

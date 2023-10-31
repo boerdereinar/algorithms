@@ -1,4 +1,4 @@
-using Algorithms.Sorting.DataStructures.Heaps;
+using Algorithms.DataStructures.Heaps;
 using Algorithms.Sorting.Sorting;
 
 namespace Algorithms.Sorting.Algorithms.Selection;

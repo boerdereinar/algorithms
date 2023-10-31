@@ -1,4 +1,4 @@
-using Algorithms.Sorting.DataStructures.Trees;
+using Algorithms.DataStructures.Trees;
 using Algorithms.Sorting.Sorting;
 
 namespace Algorithms.Sorting.Algorithms.Insertion;

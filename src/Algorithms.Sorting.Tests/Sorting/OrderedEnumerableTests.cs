@@ -1,6 +1,6 @@
+using Algorithms.Common.Utilities;
 using Algorithms.Sorting.Algorithms;
 using Algorithms.Sorting.Sorting;
-using Algorithms.Sorting.Utilities;
 
 namespace Algorithms.Sorting.Tests.Sorting;
 

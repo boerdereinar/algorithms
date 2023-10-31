@@ -1,5 +1,5 @@
+using Algorithms.Common.Tests.TestUtilities;
 using Algorithms.Sorting.Algorithms.Concurrent;
-using Algorithms.Sorting.Tests.TestUtilities;
 
 namespace Algorithms.Sorting.Tests.Algorithms.Concurrent;
 

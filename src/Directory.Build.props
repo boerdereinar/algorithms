@@ -1,4 +1,5 @@
 <Project>
+	<!-- Common Properties -->
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -6,10 +7,12 @@
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
 
+	<!-- Common Files -->
 	<ItemGroup>
 		<AdditionalFiles Include="../../stylecop.json"/>
 	</ItemGroup>
 
+	<!-- Common Packages -->
 	<ItemGroup>
 		<PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.507">
 			<PrivateAssets>all</PrivateAssets>
@@ -18,10 +21,12 @@
 	</ItemGroup>
 
 	<Choose>
+		<!-- Test Projects -->
 		<When Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
 			<PropertyGroup>
 				<IsPackable>false</IsPackable>
 
+				<!-- Source project for test project -->
 				<SourceProject>$(MSBuildProjectName.Substring(0, $([MSBuild]::Subtract($(MSBuildProjectName.Length), 6))))</SourceProject>
 			</PropertyGroup>
 
@@ -45,10 +50,21 @@
 			<ItemGroup>
 				<ProjectReference Include="../$(SourceProject)/$(SourceProject).csproj"/>
 			</ItemGroup>
+
+			<ItemGroup Condition="'$(MSBuildProjectName)'!='Algorithms.Common.Tests'">
+				<ProjectReference Include="../Algorithms.Common.Tests/Algorithms.Common.Tests.csproj"/>
+			</ItemGroup>
 		</When>
+		<!-- Source Projects -->
 		<Otherwise>
 			<ItemGroup>
 				<InternalsVisibleTo Include="$(MSBuildProjectName).Tests"/>
+			</ItemGroup>
+
+			<ItemGroup Condition="'$(MSBuildProjectName)'!='Algorithms.Common'">
+				<ProjectReference Include="../Algorithms.Common/Algorithms.Common.csproj">
+					<PrivateAssets>all</PrivateAssets>
+				</ProjectReference>
 			</ItemGroup>
 		</Otherwise>
 	</Choose>
