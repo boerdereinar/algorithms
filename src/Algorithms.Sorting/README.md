@@ -87,16 +87,17 @@ x.OrderBy(x => x % 2, new QuickSort<int>()).ThenBy(x => x);
 | [Strand Sort](https://en.wikipedia.org/wiki/Strand_sort) |    $\mathcal O(n)$    |   $\mathcal O(n^2)$   |   $\mathcal O(n^2)$   |
 
 ### Selection Sorts
-| Name                                                                   |         Best          |        Average        |          Worst          |
-|------------------------------------------------------------------------|:---------------------:|:---------------------:|:-----------------------:|
-| [Circle Sort](https://sourceforge.net/p/forth-4th/wiki/Circle%20sort/) | $\mathcal O(n\log n)$ | $\mathcal O(n\log n)$ | $\mathcal O(n\log^2 n)$ |
-| [Cycle Sort](https://en.wikipedia.org/wiki/Cycle_sort)                 |   $\mathcal O(n^2)$   |   $\mathcal O(n^2)$   |    $\mathcal O(n^2)$    |
-| [Heapsort](https://en.wikipedia.org/wiki/Heapsort)                     | $\mathcal O(n\log n)$ | $\mathcal O(n\log n)$ |  $\mathcal O(n\log n)$  |
-| [Binomial Heapsort](https://en.wikipedia.org/wiki/Binomial_heap)       |          $-$          |          $-$          |  $\mathcal O(n\log n)$  |
-| [Leftist Heapsort](https://en.wikipedia.org/wiki/Leftist_tree)         |          $-$          |          $-$          |  $\mathcal O(n\log n)$  |
-| [Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)         |   $\mathcal O(n^2)$   |   $\mathcal O(n^2)$   |    $\mathcal O(n^2)$    |
-| [Smoothsort](https://en.wikipedia.org/wiki/Smoothsort)                 |    $\mathcal O(n)$    | $\mathcal O(n\log n)$ |  $\mathcal O(n\log n)$  |
-| [Tournament Sort](https://en.wikipedia.org/wiki/Tournament_sort)       | $\mathcal O(n\log n)$ | $\mathcal O(n\log n)$ |  $\mathcal O(n\log n)$  |
+| Name                                                                     |         Best          |        Average        |          Worst          |
+|--------------------------------------------------------------------------|:---------------------:|:---------------------:|:-----------------------:|
+| [Circle Sort](https://sourceforge.net/p/forth-4th/wiki/Circle%20sort/)   | $\mathcal O(n\log n)$ | $\mathcal O(n\log n)$ | $\mathcal O(n\log^2 n)$ |
+| [Cycle Sort](https://en.wikipedia.org/wiki/Cycle_sort)                   |   $\mathcal O(n^2)$   |   $\mathcal O(n^2)$   |    $\mathcal O(n^2)$    |
+| [Heapsort](https://en.wikipedia.org/wiki/Heapsort)                       | $\mathcal O(n\log n)$ | $\mathcal O(n\log n)$ |  $\mathcal O(n\log n)$  |
+| [Binomial Heapsort](https://en.wikipedia.org/wiki/Binomial_heap)         |          $-$          |          $-$          |  $\mathcal O(n\log n)$  |
+| [Leftist Heapsort](https://en.wikipedia.org/wiki/Leftist_tree)           |          $-$          |          $-$          |  $\mathcal O(n\log n)$  |
+| [Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)           |   $\mathcal O(n^2)$   |   $\mathcal O(n^2)$   |    $\mathcal O(n^2)$    |
+| [Smoothsort](https://en.wikipedia.org/wiki/Smoothsort)                   |    $\mathcal O(n)$    | $\mathcal O(n\log n)$ |  $\mathcal O(n\log n)$  |
+| [Tournament Sort](https://en.wikipedia.org/wiki/Tournament_sort)         | $\mathcal O(n\log n)$ | $\mathcal O(n\log n)$ |  $\mathcal O(n\log n)$  |
+| [Weak-Heap Sort](https://en.wikipedia.org/wiki/Weak_heap#Weak-heap_sort) | $\mathcal O(n\log n)$ | $\mathcal O(n\log n)$ |  $\mathcal O(n\log n)$  |
 
 ### Other Sorts
 | Name                                                          |      Best       |     Average     |      Worst      |

@@ -67,3 +67,13 @@ public sealed class LeftistHeapSort<TKey> : HeapSort<TKey, LeftistHeap>
 	/// <inheritdoc cref="HeapSort{TKey,THeap}.Default"/>
 	public static new ISortingAlgorithm<TKey> Default { get; } = new LeftistHeapSort<TKey>();
 }
+
+/// <summary>
+/// Represents the <a href="https://en.wikipedia.org/wiki/Weak_heap#Weak-heap_sort">Weak-Heap Sort</a> sorting algorithm.
+/// </summary>
+/// <typeparam name="TKey">The type of elements to be sorted.</typeparam>
+public sealed class WeakHeapSort<TKey> : HeapSort<TKey, WeakHeap>
+{
+	/// <inheritdoc cref="HeapSort{TKey,THeap}.Default"/>
+	public static new ISortingAlgorithm<TKey> Default { get; } = new WeakHeapSort<TKey>();
+}
