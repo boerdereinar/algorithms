@@ -42,7 +42,7 @@ public sealed class RedBlackTree<TValue, TKey> : ITraversableTree<TValue, TKey>
 	private readonly IComparer<TKey> _comparer;
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="RedBlackTree{TSource, TKey}"/> class.
+	/// Initializes a new instance of the <see cref="RedBlackTree{TValue, TKey}"/> class.
 	/// </summary>
 	/// <param name="value">The value of the tree node.</param>
 	/// <param name="key">The key of the tree node.</param>

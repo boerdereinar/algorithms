@@ -9,9 +9,9 @@ namespace Algorithms.DataStructures.Trees;
 public sealed class BinaryTree : ITraversableTree
 {
 	/// <inheritdoc />
-	public static ITraversableTree<TSource, TKey>? Create<TSource, TKey>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)
+	public static ITraversableTree<TValue, TKey>? Create<TValue, TKey>(IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer)
 	{
-		return BinaryTree<TSource, TKey>.Create(source, keySelector, comparer);
+		return BinaryTree<TValue, TKey>.Create(source, keySelector, comparer);
 	}
 }
 
@@ -25,7 +25,7 @@ public sealed class BinaryTree<TValue, TKey> : ITraversableTree<TValue, TKey>
 	private readonly IComparer<TKey> _comparer;
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="BinaryTree{TSource, TKey}"/> class.
+	/// Initializes a new instance of the <see cref="BinaryTree{TValue, TKey}"/> class.
 	/// </summary>
 	/// <param name="value">The value of the tree node.</param>
 	/// <param name="key">The key of the tree node.</param>

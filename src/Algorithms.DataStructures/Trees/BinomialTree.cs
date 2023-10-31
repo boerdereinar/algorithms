@@ -11,14 +11,14 @@ public sealed class BinomialTree<TValue, TKey>
 	private readonly List<BinomialTree<TValue, TKey>> _forest = new();
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="BinomialTree{TSource,TKey}"/> class.
+	/// Initializes a new instance of the <see cref="BinomialTree{TValue,TKey}"/> class.
 	/// </summary>
 	/// <param name="value">The value of the tree node.</param>
 	/// <param name="key">The key of the tree node.</param>
 	public BinomialTree(TValue value, TKey key) : this(value, key, Comparer<TKey>.Default) { }
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="BinomialTree{TSource,TKey}"/> class.
+	/// Initializes a new instance of the <see cref="BinomialTree{TValue,TKey}"/> class.
 	/// </summary>
 	/// <param name="value">The value of the tree node.</param>
 	/// <param name="key">The key of the tree node.</param>

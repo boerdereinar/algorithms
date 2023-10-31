@@ -25,7 +25,7 @@ public sealed class SplayTree<TValue, TKey> : ITraversableTree<TValue, TKey>
 	private readonly IComparer<TKey> _comparer;
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="SplayTree{TSource, TKey}"/> class.
+	/// Initializes a new instance of the <see cref="SplayTree{TValue, TKey}"/> class.
 	/// </summary>
 	/// <param name="value">The value of the tree node.</param>
 	/// <param name="key">The key of the tree node.</param>

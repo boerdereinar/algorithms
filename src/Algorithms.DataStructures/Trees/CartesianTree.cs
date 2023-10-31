@@ -79,12 +79,12 @@ public sealed class CartesianTree<TValue, TKey> : ITraversableTree<TValue, TKey>
 	}
 
 	/// <summary>
-	/// Creates a <see cref="CartesianTree{TSource,TKey}"/> from a collection.
+	/// Creates a <see cref="CartesianTree{TValue,TKey}"/> from a collection.
 	/// </summary>
 	/// <param name="source">The values to construct the tree with.</param>
 	/// <param name="keySelector">A function to extract a key from an element.</param>
 	/// <param name="comparer">An <see cref="IComparer{T}"/> to compare keys.</param>
-	/// <returns>The created <see cref="CartesianTree{TSource,TKey}"/>.</returns>
+	/// <returns>The created <see cref="CartesianTree{TValue,TKey}"/>.</returns>
 	public static CartesianTree<TValue, TKey>? Create(IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer)
 	{
 		var keyedArray = source.ToKeyedArray(keySelector, comparer);

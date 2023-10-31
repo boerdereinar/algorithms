@@ -13,7 +13,7 @@ public sealed class LeftistTree<TValue, TKey>
 	private readonly IComparer<TKey> _comparer;
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="LeftistTree{TSource,TKey}"/> class.
+	/// Initializes a new instance of the <see cref="LeftistTree{TValue,TKey}"/> class.
 	/// </summary>
 	/// <param name="value">The value of the tree node.</param>
 	/// <param name="key">The key of the tree node.</param>
@@ -51,12 +51,12 @@ public sealed class LeftistTree<TValue, TKey>
 	public LeftistTree<TValue, TKey>? Right { get; private set; }
 
 	/// <summary>
-	/// Creates a <see cref="LeftistHeap{TSource,TKey}"/> from a collection.
+	/// Creates a <see cref="LeftistHeap{TValue,TKey}"/> from a collection.
 	/// </summary>
 	/// <param name="source">The source collection.</param>
 	/// <param name="keySelector">A function to extract a key from an element.</param>
 	/// <param name="comparer">An <see cref="IComparer{T}"/> to compare keys.</param>
-	/// <returns>The <see cref="LeftistTree{TSource,TKey}"/>.</returns>
+	/// <returns>The <see cref="LeftistTree{TValue,TKey}"/>.</returns>
 	public static LeftistTree<TValue, TKey>? Create(IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer)
 	{
 		var trees = new Queue<LeftistTree<TValue, TKey>>(source.Select(x => new LeftistTree<TValue, TKey>(x, keySelector(x), comparer)));

@@ -9,26 +9,26 @@ namespace Algorithms.DataStructures.Heaps;
 public sealed class BinomialHeap : IHeap
 {
 	/// <inheritdoc />
-	public static IHeap<TSource, TKey> Create<TSource, TKey>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)
+	public static IHeap<TValue, TKey> Create<TValue, TKey>(IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer)
 	{
-		return BinomialHeap<TSource, TKey>.Create(source, keySelector, comparer);
+		return BinomialHeap<TValue, TKey>.Create(source, keySelector, comparer);
 	}
 }
 
 /// <summary>
 /// Represents the <a href="https://en.wikipedia.org/wiki/Binomial_heap">Binomial Heap</a> data structure.
 /// </summary>
-/// <typeparam name="TSource">The type of the elements in the heap.</typeparam>
+/// <typeparam name="TValue">The type of the elements in the heap.</typeparam>
 /// <typeparam name="TKey">The type of the key used to compare elements in the heap.</typeparam>
-public sealed class BinomialHeap<TSource, TKey> : IHeap<TSource, TKey>
+public sealed class BinomialHeap<TValue, TKey> : IHeap<TValue, TKey>
 {
 	private readonly IComparer<TKey> _comparer;
-	private readonly Dictionary<int, BinomialTree<TSource, TKey>> _trees = new();
+	private readonly Dictionary<int, BinomialTree<TValue, TKey>> _trees = new();
 
 	private int _min = -1;
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="BinomialHeap{TSource, TKey}"/> class.
+	/// Initializes a new instance of the <see cref="BinomialHeap{TValue, TKey}"/> class.
 	/// </summary>
 	/// <param name="comparer">The comparer used to compare keys.</param>
 	public BinomialHeap(IComparer<TKey> comparer)
@@ -37,12 +37,12 @@ public sealed class BinomialHeap<TSource, TKey> : IHeap<TSource, TKey>
 	}
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="BinomialHeap{TSource, TKey}"/> class.
+	/// Initializes a new instance of the <see cref="BinomialHeap{TValue, TKey}"/> class.
 	/// </summary>
 	/// <param name="source">The source collection.</param>
 	/// <param name="keySelector">The function used to extract the key from the element.</param>
 	/// <param name="comparer">The comparer used to compare keys.</param>
-	public BinomialHeap(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)
+	public BinomialHeap(IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer)
 	{
 		_comparer = comparer;
 
@@ -54,17 +54,17 @@ public sealed class BinomialHeap<TSource, TKey> : IHeap<TSource, TKey>
 	public int Count { get; private set; }
 
 	/// <inheritdoc />
-	public TSource Min => TryGetMin(out var value, out _) ? value : throw new InvalidOperationException("The heap is empty.");
+	public TValue Min => TryGetMin(out var value, out _) ? value : throw new InvalidOperationException("The heap is empty.");
 
 	/// <inheritdoc />
-	public void Insert(TSource value, TKey key)
+	public void Insert(TValue value, TKey key)
 	{
 		Count++;
 		Insert(new(value, key, _comparer));
 	}
 
 	/// <inheritdoc />
-	public bool TryGetMin([MaybeNullWhen(false)] out TSource value, [MaybeNullWhen(false)] out TKey key)
+	public bool TryGetMin([MaybeNullWhen(false)] out TValue value, [MaybeNullWhen(false)] out TKey key)
 	{
 		if (_min < 0)
 		{
@@ -79,13 +79,13 @@ public sealed class BinomialHeap<TSource, TKey> : IHeap<TSource, TKey>
 	}
 
 	/// <inheritdoc />
-	public TSource DeleteMin()
+	public TValue DeleteMin()
 	{
 		return TryDeleteMin(out var value, out _) ? value : throw new InvalidOperationException("The heap is empty.");
 	}
 
 	/// <inheritdoc />
-	public bool TryDeleteMin([MaybeNullWhen(false)] out TSource value, [MaybeNullWhen(false)] out TKey key)
+	public bool TryDeleteMin([MaybeNullWhen(false)] out TValue value, [MaybeNullWhen(false)] out TKey key)
 	{
 		if (_min < 0)
 		{
@@ -108,12 +108,12 @@ public sealed class BinomialHeap<TSource, TKey> : IHeap<TSource, TKey>
 	}
 
 	/// <inheritdoc />
-	public static IHeap<TSource, TKey> Create(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)
+	public static IHeap<TValue, TKey> Create(IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer)
 	{
-		return new BinomialHeap<TSource, TKey>(source, keySelector, comparer);
+		return new BinomialHeap<TValue, TKey>(source, keySelector, comparer);
 	}
 
-	private void Insert(BinomialTree<TSource, TKey> value)
+	private void Insert(BinomialTree<TValue, TKey> value)
 	{
 		while (_trees.TryGetValue(value.Order, out var tree))
 		{
@@ -121,7 +121,7 @@ public sealed class BinomialHeap<TSource, TKey> : IHeap<TSource, TKey>
 				_min++;
 
 			_trees.Remove(value.Order);
-			value = BinomialTree<TSource, TKey>.Merge(value, tree);
+			value = BinomialTree<TValue, TKey>.Merge(value, tree);
 		}
 
 		_trees[value.Order] = value;
