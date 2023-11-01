@@ -92,7 +92,7 @@ x.OrderBy(x => x % 2, new QuickSort<int>()).ThenBy(x => x);
 | [Binomial Heapsort](https://en.wikipedia.org/wiki/Binomial_heap)         |          $-$           |          $-$           |  $\mathcal O(n\log n)$  |
 | [Circle Sort](https://sourceforge.net/p/forth-4th/wiki/Circle%20sort/)   | $\mathcal O(n\log n)$  | $\mathcal O(n\log n)$  | $\mathcal O(n\log^2 n)$ |
 | [Cycle Sort](https://en.wikipedia.org/wiki/Cycle_sort)                   |   $\mathcal O(n^2)$    |   $\mathcal O(n^2)$    |    $\mathcal O(n^2)$    |
-| [D-Heap Sort](https://en.wikipedia.org/wiki/D-ary_heap)                  | $\mathcal O(n\log_kn)$ | $\mathcal O(n\log_kn)$ | $\mathcal O(n\log_kn)$  |
+| [D-Heap Sort](https://en.wikipedia.org/wiki/D-ary_heap)                  | $\mathcal O(n\log_dn)$ | $\mathcal O(n\log_dn)$ | $\mathcal O(n\log_dn)$  |
 | [Heapsort](https://en.wikipedia.org/wiki/Heapsort)                       | $\mathcal O(n\log n)$  | $\mathcal O(n\log n)$  |  $\mathcal O(n\log n)$  |
 | [Leftist Heapsort](https://en.wikipedia.org/wiki/Leftist_tree)           |          $-$           |          $-$           |  $\mathcal O(n\log n)$  |
 | [Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)           |   $\mathcal O(n^2)$    |   $\mathcal O(n^2)$    |    $\mathcal O(n^2)$    |
