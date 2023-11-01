@@ -19,8 +19,8 @@ public sealed class KeyedArraySegmentTests
 
 		Assert.Same(array, segment.Array);
 		Assert.Equal(array.Length, segment.Length);
-		Assert.Equal(array.Elements, segment.Elements.ToArray());
-		Assert.Equal(array.Keys, segment.Keys.ToArray());
+		Assert.Equal(array.Elements, segment.Elements);
+		Assert.Equal(array.Keys, segment.Keys);
 		Assert.Equal(0, segment.Offset);
 		Assert.Equal(array.Length, segment.Length);
 	}
@@ -68,8 +68,8 @@ public sealed class KeyedArraySegmentTests
 
 		Assert.Same(array, segment.Array);
 		Assert.Equal(new[] { 1, 2, 3 }, new[] { 1, 2, 3 });
-		Assert.Equal(new[] { 2, 3, 4 }, segment.Elements.ToArray());
-		Assert.Equal(new[] { 2, 3, 4 }, segment.Keys.ToArray());
+		Assert.Equal(new[] { 2, 3, 4 }, segment.Elements);
+		Assert.Equal(new[] { 2, 3, 4 }, segment.Keys);
 		Assert.Equal(1, segment.Offset);
 		Assert.Equal(3, segment.Length);
 	}
@@ -395,8 +395,8 @@ public sealed class KeyedArraySegmentTests
 		var segment = KeyedArraySegment();
 		segment.Swap(0, 1);
 
-		Assert.Equal(new[] { 3, 2, 4 }, segment.Elements.ToArray());
-		Assert.Equal(new[] { 3, 2, 4 }, segment.Keys.ToArray());
+		Assert.Equal(new[] { 3, 2, 4 }, segment.Elements);
+		Assert.Equal(new[] { 3, 2, 4 }, segment.Keys);
 	}
 
 	/// <summary>
@@ -409,8 +409,8 @@ public sealed class KeyedArraySegmentTests
 		var segment = KeyedArraySegment();
 		segment.Swap(0, ^1);
 
-		Assert.Equal(new[] { 4, 3, 2 }, segment.Elements.ToArray());
-		Assert.Equal(new[] { 4, 3, 2 }, segment.Keys.ToArray());
+		Assert.Equal(new[] { 4, 3, 2 }, segment.Elements);
+		Assert.Equal(new[] { 4, 3, 2 }, segment.Keys);
 	}
 
 	/// <summary>
@@ -456,8 +456,8 @@ public sealed class KeyedArraySegmentTests
 		var actual = segment.Slice(1, 3);
 
 		Assert.Equal(3, actual.Length);
-		Assert.Equal(new[] { 3, 4, 5 }, actual.Elements.ToArray());
-		Assert.Equal(new[] { 3, 4, 5 }, actual.Keys.ToArray());
+		Assert.Equal(new[] { 3, 4, 5 }, actual.Elements);
+		Assert.Equal(new[] { 3, 4, 5 }, actual.Keys);
 	}
 
 	/// <summary>
@@ -473,8 +473,8 @@ public sealed class KeyedArraySegmentTests
 
 		Assert.NotSame(source.Array, destination.Array);
 		Assert.Equal(source.Length, destination.Length);
-		Assert.Equal(source.Elements.ToArray(), destination.Elements.ToArray());
-		Assert.Equal(source.Keys.ToArray(), destination.Keys.ToArray());
+		Assert.Equal(source.Elements, destination.Elements);
+		Assert.Equal(source.Keys, destination.Keys);
 	}
 
 	/// <summary>
@@ -488,8 +488,8 @@ public sealed class KeyedArraySegmentTests
 
 		Assert.NotSame(expected.Array, actual);
 		Assert.Equal(expected.Length, actual.Length);
-		Assert.Equal(expected.Elements.ToArray(), actual.Elements);
-		Assert.Equal(expected.Keys.ToArray(), actual.Keys);
+		Assert.Equal(expected.Elements, actual.Elements);
+		Assert.Equal(expected.Keys, actual.Keys);
 	}
 
 	/// <summary>
@@ -499,7 +499,7 @@ public sealed class KeyedArraySegmentTests
 	public void GetEnumerator_ReturnsElements()
 	{
 		var segment = KeyedArraySegment();
-		Assert.Equal(segment.Elements.ToArray(), segment);
+		Assert.Equal(segment.Elements, segment.ToArray());
 	}
 
 	private static KeyedArray<int, int> KeyedArray(int n = 5)

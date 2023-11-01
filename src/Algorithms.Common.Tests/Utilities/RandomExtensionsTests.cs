@@ -32,7 +32,7 @@ public sealed class RandomExtensionsTests
 		random.Shuffle(actual);
 
 		Assert.NotEqual(Enumerable.Range(0, 100), actual);
-		Assert.Equal(actual, actual.Keys.ToArray());
+		Assert.Equal(actual, actual.Keys);
 	}
 
 	/// <summary>
@@ -46,6 +46,6 @@ public sealed class RandomExtensionsTests
 		random.Shuffle(actual);
 
 		Assert.NotEqual(Enumerable.Range(0, 100), actual);
-		Assert.Equal(actual.Elements.ToArray(), actual.Keys.ToArray());
+		Assert.Equal(actual.Elements, actual.Keys);
 	}
 }

@@ -296,8 +296,8 @@ public sealed class KeyedArrayTests
 		var actual = source.Slice(1, 3);
 
 		Assert.Equal(3, actual.Length);
-		Assert.Equal(new[] { 2, 3, 4 }, actual.Elements.ToArray());
-		Assert.Equal(new[] { 2, 3, 4 }, actual.Keys.ToArray());
+		Assert.Equal(new[] { 2, 3, 4 }, actual.Elements);
+		Assert.Equal(new[] { 2, 3, 4 }, actual.Keys);
 	}
 
 	/// <summary>
@@ -327,8 +327,8 @@ public sealed class KeyedArrayTests
 
 		Assert.NotSame(source, destination.Array);
 		Assert.Equal(source.Length, destination.Length);
-		Assert.Equal(source.Elements, destination.Elements.ToArray());
-		Assert.Equal(source.Keys, destination.Keys.ToArray());
+		Assert.Equal(source.Elements, destination.Elements);
+		Assert.Equal(source.Keys, destination.Keys);
 	}
 
 	/// <summary>
