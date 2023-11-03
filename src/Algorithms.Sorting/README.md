@@ -72,8 +72,9 @@ x.OrderBy(x => x % 2, new QuickSort<int>()).ThenBy(x => x);
 ### Insertion Sorts
 | Name                                                                           |         Best          |           Average           |            Worst            |
 |--------------------------------------------------------------------------------|:---------------------:|:---------------------------:|:---------------------------:|
-| [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)                 |    $\mathcal O(n)$    |      $\mathcal O(n^2)$      |      $\mathcal O(n^2)$      |
+| [B-Tree Sort](https://en.wikipedia.org/wiki/B-tree)                            |          $-$          |             $-$             |    $\mathcal O(n\log n)$    |
 | [Cartesian Tree Sort](https://en.wikipedia.org/wiki/Cartesian_tree#In_sorting) | $\mathcal O(n\log n)$ |    $\mathcal O(n\log n)$    |      $\mathcal O(n^2)$      |
+| [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)                 |    $\mathcal O(n)$    |      $\mathcal O(n^2)$      |      $\mathcal O(n^2)$      |
 | [Patience Sort](https://en.wikipedia.org/wiki/Patience_sorting)                |    $\mathcal O(n)$    |    $\mathcal O(n\log n)$    |    $\mathcal O(n\log n)$    |
 | [Red-Black Tree Sort](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)    |          $-$          |             $-$             |    $\mathcal O(n\log n)$    |
 | [Shellsort](https://en.wikipedia.org/wiki/Shellsort)                           | $\mathcal O(n\log n)$ | $\mathcal O(n^\frac{4}{3})$ | $\mathcal O(n^\frac{3}{2})$ |

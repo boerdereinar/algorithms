@@ -8,7 +8,7 @@ The full list of implemented data structures can be found below.
 |---------------------------------------------------------|:-----------:|:----------------------:|:---------------------:|
 | [Binary](https://en.wikipedia.org/wiki/Binary_heap)     | $\Theta(1)$ |    $\Theta(\log n)$    | $\mathcal O(\log n)$  |
 | [Binomial](https://en.wikipedia.org/wiki/Binomial_heap) | $\Theta(1)$ |    $\Theta(\log n)$    |      $\Theta(1)$      |
-| [D-heap](https://en.wikipedia.org/wiki/D-ary_heap)      | $\Theta(1)$ | $d\mathcal O(\log_dn)$ | $\mathcal O(\log_dn)$ |
+| [D-heap](https://en.wikipedia.org/wiki/D-ary_heap)      | $\Theta(1)$ | $\mathcal O(d\log_dn)$ | $\mathcal O(\log_dn)$ |
 | [Leftist](https://en.wikipedia.org/wiki/Leftist_tree)   | $\Theta(1)$ |    $\Theta(\log n)$    |   $\Theta(\log n)$    |
 | [Weak](https://en.wikipedia.org/wiki/Weak_heap)         | $\Theta(1)$ |  $\mathcal O(\log n)$  | $\mathcal O(\log n)$  |
 
@@ -17,6 +17,7 @@ The full list of implemented data structures can be found below.
 |-------------------------------------------------------------------|:-----------:|
 | [Binary](https://en.wikipedia.org/wiki/Binary_search_tree)        |   `true`    |
 | [Binomial](https://en.wikipedia.org/wiki/Binomial_heap)           |   `false`   |
+| [B-Tree](https://en.wikipedia.org/wiki/B-tree)                    |   `true`    |
 | [Cartesian](https://en.wikipedia.org/wiki/Cartesian_tree)         |   `true`    |
 | [Leftist](https://en.wikipedia.org/wiki/Leftist_tree)             |   `false`   |
 | [Red-Black](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree) |   `true`    |

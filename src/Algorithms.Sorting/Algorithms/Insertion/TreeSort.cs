@@ -14,13 +14,13 @@ public class TreeSort<TKey, TTree> : ISortingAlgorithm<TKey> where TTree : ITrav
 	public static ISortingAlgorithm<TKey> Default { get; } = new TreeSort<TKey, TTree>();
 
 	/// <inheritdoc />
-	public IEnumerable<TSource> OrderBy<TSource>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)
+	public virtual IEnumerable<TSource> OrderBy<TSource>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)
 	{
 		return TTree.Create(source, keySelector, comparer) ?? Enumerable.Empty<TSource>();
 	}
 
 	/// <inheritdoc />
-	public ISortingAlgorithm<T> CreateComposite<T>()
+	public virtual ISortingAlgorithm<T> CreateComposite<T>()
 	{
 		return new TreeSort<T, TTree>();
 	}

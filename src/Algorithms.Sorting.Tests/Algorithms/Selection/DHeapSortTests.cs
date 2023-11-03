@@ -23,7 +23,7 @@ public sealed class DHeapSortTests : SortingAlgorithmTestBase<DHeapSortTests>, I
 	}
 
 	/// <summary>
-	/// Tests for <see cref="DHeapSort{TKey}"/>.
+	/// Tests for <see cref="DHeapSort{TKey}"/> with 3 children.
 	/// </summary>
 	public sealed class DHeapSortWith3ChildrenTests : SortingAlgorithmTestBase<DHeapSortTests>, ISortingAlgorithmTest
 	{

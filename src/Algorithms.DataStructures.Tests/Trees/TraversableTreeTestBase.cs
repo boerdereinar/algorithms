@@ -23,13 +23,14 @@ public abstract class TraversableTreeTestBase<TTree, TTreeFactory>
 	}
 
 	/// <summary>
-	/// Tests if <see cref="ITraversableTree{TSource,TKey}.Create"/> retuns null.
+	/// Tests if <see cref="ITraversableTree{TSource,TKey}.Create"/> retuns null or an empty tree node.
 	/// </summary>
 	[Fact]
-	public void Create_Empty_ReturnsNull()
+	public void Create_Empty_ReturnsNullOrEmpty()
 	{
 		var tree = TTreeFactory.Create(Enumerable.Empty<int>(), x => x, Comparer<int>.Default);
-		Assert.Null(tree);
+		if (tree is not null)
+			Assert.Empty(tree);
 	}
 
 	/// <summary>
