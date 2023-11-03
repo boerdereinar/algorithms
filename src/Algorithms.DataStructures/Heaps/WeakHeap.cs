@@ -9,6 +9,8 @@ namespace Algorithms.DataStructures.Heaps;
 /// </summary>
 public sealed class WeakHeap : IHeap
 {
+	private WeakHeap() { }
+
 	/// <inheritdoc />
 	public static IHeap<TValue, TKey> Create<TValue, TKey>(IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer)
 	{

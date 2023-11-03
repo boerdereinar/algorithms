@@ -8,6 +8,8 @@ namespace Algorithms.DataStructures.Heaps;
 /// </summary>
 public sealed class LeftistHeap : IHeap
 {
+	private LeftistHeap() { }
+
 	/// <inheritdoc />
 	public static IHeap<TValue, TKey> Create<TValue, TKey>(IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer)
 	{

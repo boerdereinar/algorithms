@@ -25,6 +25,8 @@ public enum Color
 /// </summary>
 public sealed class RedBlackTree : ITraversableTree
 {
+	private RedBlackTree() { }
+
 	/// <inheritdoc />
 	public static ITraversableTree<TValue, TKey>? Create<TValue, TKey>(IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer)
 	{

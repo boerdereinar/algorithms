@@ -8,6 +8,8 @@ namespace Algorithms.DataStructures.Trees;
 /// </summary>
 public sealed class SplayTree : ITraversableTree
 {
+	private SplayTree() { }
+
 	/// <inheritdoc />
 	public static ITraversableTree<TValue, TKey>? Create<TValue, TKey>(IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer)
 	{
