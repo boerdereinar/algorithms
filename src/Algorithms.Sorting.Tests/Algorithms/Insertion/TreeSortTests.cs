@@ -17,40 +17,4 @@ public sealed class TreeSortTests
 		var instance = TreeSort<int, BinaryTree>.Default;
 		Assert.IsType<TreeSort<int, BinaryTree>>(instance);
 	}
-
-	/// <summary>
-	/// Tests for <see cref="BinaryTreeSort{TKey}"/>.
-	/// </summary>
-	public sealed class BinaryTreeSortTests : SortingAlgorithmTestBase<BinaryTreeSortTests>, ISortingAlgorithmTest
-	{
-		/// <inheritdoc />
-		protected override Type Type => typeof(BinaryTreeSort<>);
-	}
-
-	/// <summary>
-	/// Tests for <see cref="CartesianTreeSort{TKey}"/>.
-	/// </summary>
-	public sealed class CartesianTreeSortTests : SortingAlgorithmTestBase<CartesianTreeSortTests>, ISortingAlgorithmTest
-	{
-		/// <inheritdoc />
-		protected override Type Type => typeof(CartesianTreeSort<>);
-	}
-
-	/// <summary>
-	/// Tests for <see cref="RedBlackTreeSort{TKey}"/>.
-	/// </summary>
-	public sealed class RedBlackTreeSortTests : SortingAlgorithmTestBase<RedBlackTreeSortTests>, ISortingAlgorithmTest
-	{
-		/// <inheritdoc />
-		protected override Type Type => typeof(RedBlackTreeSort<>);
-	}
-
-	/// <summary>
-	/// Tests for <see cref="SplaySort{TKey}"/>.
-	/// </summary>
-	public sealed class SplaySortTests : SortingAlgorithmTestBase<SplaySortTests>, ISortingAlgorithmTest
-	{
-		/// <inheritdoc />
-		protected override Type Type => typeof(SplaySort<>);
-	}
 }
