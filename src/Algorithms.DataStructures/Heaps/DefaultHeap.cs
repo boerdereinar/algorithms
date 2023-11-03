@@ -7,6 +7,7 @@ namespace Algorithms.DataStructures.Heaps;
 /// </summary>
 public sealed class DefaultHeap : IHeap
 {
+	[ExcludeFromCodeCoverage]
 	private DefaultHeap() { }
 
 	/// <inheritdoc />

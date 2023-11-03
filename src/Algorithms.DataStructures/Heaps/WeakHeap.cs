@@ -9,6 +9,7 @@ namespace Algorithms.DataStructures.Heaps;
 /// </summary>
 public sealed class WeakHeap : IHeap
 {
+	[ExcludeFromCodeCoverage]
 	private WeakHeap() { }
 
 	/// <inheritdoc />

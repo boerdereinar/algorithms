@@ -8,6 +8,7 @@ namespace Algorithms.DataStructures.Heaps;
 /// </summary>
 public sealed class BinomialHeap : IHeap
 {
+	[ExcludeFromCodeCoverage]
 	private BinomialHeap() { }
 
 	/// <inheritdoc />

@@ -8,6 +8,7 @@ namespace Algorithms.DataStructures.Trees;
 /// </summary>
 public sealed class SplayTree : ITraversableTree
 {
+	[ExcludeFromCodeCoverage]
 	private SplayTree() { }
 
 	/// <inheritdoc />

@@ -9,6 +9,7 @@ namespace Algorithms.DataStructures.Trees;
 /// </summary>
 public sealed class CartesianTree : ITraversableTree
 {
+	[ExcludeFromCodeCoverage]
 	private CartesianTree() { }
 
 	/// <inheritdoc />

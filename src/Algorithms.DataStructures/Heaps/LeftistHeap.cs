@@ -8,6 +8,7 @@ namespace Algorithms.DataStructures.Heaps;
 /// </summary>
 public sealed class LeftistHeap : IHeap
 {
+	[ExcludeFromCodeCoverage]
 	private LeftistHeap() { }
 
 	/// <inheritdoc />

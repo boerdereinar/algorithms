@@ -8,6 +8,7 @@ namespace Algorithms.DataStructures.Heaps;
 /// </summary>
 public sealed class BinaryHeap : IHeap
 {
+	[ExcludeFromCodeCoverage]
 	private BinaryHeap() { }
 
 	/// <inheritdoc />

@@ -25,6 +25,7 @@ public enum Color
 /// </summary>
 public sealed class RedBlackTree : ITraversableTree
 {
+	[ExcludeFromCodeCoverage]
 	private RedBlackTree() { }
 
 	/// <inheritdoc />

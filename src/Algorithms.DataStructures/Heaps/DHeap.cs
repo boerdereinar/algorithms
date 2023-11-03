@@ -8,6 +8,7 @@ namespace Algorithms.DataStructures.Heaps;
 /// </summary>
 public sealed class DHeap : IHeap
 {
+	[ExcludeFromCodeCoverage]
 	private DHeap() { }
 
 	/// <inheritdoc />

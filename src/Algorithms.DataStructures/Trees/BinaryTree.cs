@@ -8,6 +8,7 @@ namespace Algorithms.DataStructures.Trees;
 /// </summary>
 public sealed class BinaryTree : ITraversableTree
 {
+	[ExcludeFromCodeCoverage]
 	private BinaryTree() { }
 
 	/// <inheritdoc />
