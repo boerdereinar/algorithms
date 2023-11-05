@@ -6,6 +6,7 @@ namespace Algorithms.Sorting.Tests.Algorithms.Concurrent;
 /// <summary>
 /// Tests for <see cref="ParallelQuickSort{TKey}"/>.
 /// </summary>
+[Collection(nameof(ConcurrentSortTestCollection))]
 public sealed class ParallelQuickSortTests : SortingAlgorithmTestBase<ParallelQuickSortTests>, ISortingAlgorithmTest
 {
 	/// <inheritdoc />

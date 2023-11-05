@@ -6,6 +6,7 @@ namespace Algorithms.Sorting.Tests.Algorithms.Concurrent;
 /// <summary>
 /// Tests for <see cref="BitonicSort{TKey}"/>.
 /// </summary>
+[Collection(nameof(ConcurrentSortTestCollection))]
 public sealed class BitonicSortTests : SortingAlgorithmTestBase<BitonicSortTests>, ISortingAlgorithmTest
 {
 	/// <inheritdoc />

@@ -5,6 +5,7 @@ namespace Algorithms.Sorting.Tests.Algorithms.Concurrent;
 /// <summary>
 /// Tests for <see cref="BatcherOddEvenMergeSort{TKey}"/>.
 /// </summary>
+[Collection(nameof(ConcurrentSortTestCollection))]
 public sealed class BatcherOddEvenMergeSortTests : SortingAlgorithmTestBase<BatcherOddEvenMergeSortTests>, ISortingAlgorithmTest
 {
 	/// <inheritdoc />
