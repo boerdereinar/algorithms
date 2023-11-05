@@ -7,7 +7,7 @@ namespace Algorithms.Sorting.Tests.TestUtilities;
 /// Represents a set of data for a theory for a sorting test. Data can be added to the data set using the collection
 /// initializer syntax.
 /// </summary>
-/// <typeparam name="T">The parameter type.</typeparam>
+/// <typeparam name="T">The type of the data.</typeparam>
 public sealed class SortTheoryData<T> : TheoryData<IEnumerable<T>, IEnumerable<T>, bool>
 {
 	private readonly Random _random = new(42);

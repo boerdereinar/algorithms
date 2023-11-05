@@ -3,8 +3,8 @@ namespace Algorithms.Sorting.Sorting;
 /// <summary>
 /// Composite key of two types.
 /// </summary>
-/// <typeparam name="TPrimary">Primary key type.</typeparam>
-/// <typeparam name="TSecondary">Secondary key type.</typeparam>
+/// <typeparam name="TPrimary">The type of the primary key.</typeparam>
+/// <typeparam name="TSecondary">The type of the secondary key.</typeparam>
 internal sealed class CompositeKey<TPrimary, TSecondary>
 {
 	private readonly TPrimary _primary;

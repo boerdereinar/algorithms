@@ -24,7 +24,7 @@ public interface ISortingAlgorithm<TKey>
 	/// <summary>
 	/// Creates an instance of <see cref="ISortingAlgorithm{TKey}"/> with type <c>T</c>.
 	/// </summary>
-	/// <typeparam name="T">Type of the key.</typeparam>
+	/// <typeparam name="T">The type of the composite.</typeparam>
 	/// <returns>Created instance.</returns>
 	/// <exception cref="NotSupportedException">
 	/// Type <c>T</c> is not supported.

@@ -20,7 +20,7 @@ public interface ITraversableTree
 /// <summary>
 /// Represents a tree data structure that can be traversed and returns a sorted collection.
 /// </summary>
-/// <typeparam name="TArgument">The argument of the traversable tree.</typeparam>
+/// <typeparam name="TArgument">The type of argument of the traversable tree.</typeparam>
 public interface ITraversableTree<in TArgument> : ITraversableTree
 {
 	/// <summary>
@@ -58,7 +58,7 @@ public interface ITraversableTree<TValue, TKey> : IEnumerable<TValue>
 /// </summary>
 /// <typeparam name="TValue">The type of the elements in the tree.</typeparam>
 /// <typeparam name="TKey">The type of the key used to compare elements in the tree.</typeparam>
-/// <typeparam name="TArgument">The argument of the traversable tree.</typeparam>
+/// <typeparam name="TArgument">The type of the argument of the traversable tree.</typeparam>
 public interface ITraversableTree<TValue, TKey, in TArgument> : ITraversableTree<TValue, TKey>
 {
 	/// <summary>
