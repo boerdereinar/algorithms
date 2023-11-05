@@ -6,7 +6,7 @@ namespace Algorithms.DataStructures.Trees;
 /// <summary>
 /// Represents the <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a> data structure.
 /// </summary>
-public sealed class BTree : ITraversableTree
+public sealed class BTree : ITraversableTree<int>
 {
 	[ExcludeFromCodeCoverage]
 	private BTree() { }
@@ -20,16 +20,16 @@ public sealed class BTree : ITraversableTree
 	/// <summary>
 	/// Creates a <see cref="ITraversableTree{TValue,TKey}"/> from a collection.
 	/// </summary>
-	/// <param name="d">The order of the tree.</param>
+	/// <param name="m">The order of the tree.</param>
 	/// <param name="source">The source collection.</param>
 	/// <param name="keySelector">A function to extract a key from an element.</param>
 	/// <param name="comparer">An <see cref="IComparer{T}"/> to compare keys.</param>
 	/// <typeparam name="TValue">The type of the elements in the heap.</typeparam>
 	/// <typeparam name="TKey">The type of the key used to compare elements in the heap.</typeparam>
 	/// <returns>The <see cref="ITraversableTree{TValue,TKey}"/>.</returns>
-	public static ITraversableTree<TValue, TKey> Create<TValue, TKey>(int d, IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer)
+	public static ITraversableTree<TValue, TKey> Create<TValue, TKey>(int m, IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer)
 	{
-		return BTree<TValue, TKey>.Create(d, source, keySelector, comparer);
+		return BTree<TValue, TKey>.Create(m, source, keySelector, comparer);
 	}
 }
 
@@ -38,7 +38,7 @@ public sealed class BTree : ITraversableTree
 /// </summary>
 /// <typeparam name="TValue">The type of the elements in the tree.</typeparam>
 /// <typeparam name="TKey">The type of the key used to compare elements in the tree.</typeparam>
-public sealed class BTree<TValue, TKey> : ITraversableTree<TValue, TKey>
+public sealed class BTree<TValue, TKey> : ITraversableTree<TValue, TKey, int>
 {
 	private readonly int _m;
 	private readonly IComparer<TKey> _comparer;
@@ -169,14 +169,14 @@ public sealed class BTree<TValue, TKey> : ITraversableTree<TValue, TKey>
 	/// <summary>
 	/// Creates a <see cref="ITraversableTree{TValue,TKey}"/> from a collection.
 	/// </summary>
-	/// <param name="d">The order of the tree.</param>
+	/// <param name="m">The order of the tree.</param>
 	/// <param name="source">The source collection.</param>
 	/// <param name="keySelector">A function to extract a key from an element.</param>
 	/// <param name="comparer">An <see cref="IComparer{T}"/> to compare keys.</param>
 	/// <returns>The <see cref="ITraversableTree{TValue,TKey}"/>.</returns>
-	public static ITraversableTree<TValue, TKey> Create(int d, IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer)
+	public static ITraversableTree<TValue, TKey> Create(int m, IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer)
 	{
-		var root = new BTree<TValue, TKey>(d, comparer);
+		var root = new BTree<TValue, TKey>(m, comparer);
 		foreach (var item in source)
 			root = root.Insert(item, keySelector(item));
 
