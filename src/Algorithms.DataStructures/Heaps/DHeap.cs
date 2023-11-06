@@ -6,7 +6,7 @@ namespace Algorithms.DataStructures.Heaps;
 /// <summary>
 /// Represents the <a href="https://en.wikipedia.org/wiki/D-ary_heap">D-heap</a> data structure.
 /// </summary>
-public sealed class DHeap : IHeap
+public sealed class DHeap : IHeap<int>
 {
 	[ExcludeFromCodeCoverage]
 	private DHeap() { }
@@ -38,7 +38,7 @@ public sealed class DHeap : IHeap
 /// </summary>
 /// <typeparam name="TValue">The type of the elements in the heap.</typeparam>
 /// <typeparam name="TKey">The type of the key used to compare elements in the heap.</typeparam>
-public sealed class DHeap<TValue, TKey> : IHeap<TValue, TKey>
+public sealed class DHeap<TValue, TKey> : IHeap<TValue, TKey, int>
 {
 	private readonly int _d;
 	private readonly KeyedArray<TValue, TKey> _source;
@@ -167,7 +167,7 @@ public sealed class DHeap<TValue, TKey> : IHeap<TValue, TKey>
 	}
 
 	/// <summary>
-	/// Creates a min-heap from an array of elements.
+	/// Creates a min-heap from a collection.
 	/// </summary>
 	/// <param name="d">The number of children in each node.</param>
 	/// <param name="source">The source collection.</param>

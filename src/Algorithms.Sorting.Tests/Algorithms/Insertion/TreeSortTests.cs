@@ -24,8 +24,8 @@ public sealed class TreeSortTests
 	[Fact]
 	public void CreateComposite_ReturnsComposite()
 	{
-		var instance = TreeSort<int, BTree>.Default.CreateComposite<float>();
-		Assert.IsType<TreeSort<float, BTree>>(instance);
+		var instance = TreeSort<int, BinaryTree>.Default.CreateComposite<float>();
+		Assert.IsType<TreeSort<float, BinaryTree>>(instance);
 	}
 
 	/// <summary>
@@ -68,7 +68,7 @@ public sealed class TreeSortTests
 
 			var typedInstance = (TreeSort<float, BTree, int>)instance;
 			Assert.Equal(5, typedInstance.Argument);
-			Assert.False(typedInstance.HasArgument);
+			Assert.True(typedInstance.HasArgument);
 		}
 	}
 }

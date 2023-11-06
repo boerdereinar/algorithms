@@ -22,6 +22,25 @@ public interface IHeap
 /// <summary>
 /// Represents a min-heap data structure.
 /// </summary>
+/// <typeparam name="TArgument">The type of the argument of the heap.</typeparam>
+public interface IHeap<in TArgument> : IHeap
+{
+	/// <summary>
+	/// Creates a min-heap from a collection.
+	/// </summary>
+	/// <param name="argument">The argument of the heap.</param>
+	/// <param name="source">The source collection.</param>
+	/// <param name="keySelector">A function to extract a key from an element.</param>
+	/// <param name="comparer">An <see cref="IComparer{T}"/> to compare keys.</param>
+	/// <typeparam name="TValue">The type of the elements in the heap.</typeparam>
+	/// <typeparam name="TKey">The type of the key used to compare elements in the heap.</typeparam>
+	/// <returns>The <see cref="IHeap{TValue,TKey}"/>.</returns>
+	static abstract IHeap<TValue, TKey> Create<TValue, TKey>(TArgument argument, IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer);
+}
+
+/// <summary>
+/// Represents a min-heap data structure.
+/// </summary>
 /// <typeparam name="TValue">The type of the elements in the heap.</typeparam>
 /// <typeparam name="TKey">The type of the key used to compare elements in the heap.</typeparam>
 public interface IHeap<TValue, TKey>
@@ -68,11 +87,30 @@ public interface IHeap<TValue, TKey>
 	bool TryDeleteMin([MaybeNullWhen(false)] out TValue value, [MaybeNullWhen(false)] out TKey key);
 
 	/// <summary>
-	/// Creates a min-heap from an array of elements.
+	/// Creates a min-heap from a collection.
 	/// </summary>
 	/// <param name="source">The source collection.</param>
 	/// <param name="keySelector">A function to extract a key from an element.</param>
 	/// <param name="comparer">An <see cref="IComparer{T}"/> to compare keys.</param>
 	/// <returns>The min-heap.</returns>
 	static abstract IHeap<TValue, TKey> Create(IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer);
+}
+
+/// <summary>
+/// Represents a min-heap data structure.
+/// </summary>
+/// <typeparam name="TValue">The type of the elements in the heap.</typeparam>
+/// <typeparam name="TKey">The type of the key used to compare elements in the heap.</typeparam>
+/// <typeparam name="TArgument">The type of the argument of the heap.</typeparam>
+public interface IHeap<TValue, TKey, in TArgument> : IHeap<TValue, TKey>
+{
+	/// <summary>
+	/// Creates a min-heap from a collection.
+	/// </summary>
+	/// <param name="argument">The argument of the heap.</param>
+	/// <param name="source">The source collection.</param>
+	/// <param name="keySelector">A function to extract a key from an element.</param>
+	/// <param name="comparer">An <see cref="IComparer{T}"/> to compare keys.</param>
+	/// <returns>The min-heap.</returns>
+	static abstract IHeap<TValue, TKey> Create(TArgument argument, IEnumerable<TValue> source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer);
 }
