@@ -44,7 +44,7 @@ public sealed class BTree<TValue, TKey> : ITraversableTree<TValue, TKey, int>
 	private readonly IComparer<TKey> _comparer;
 	private readonly TValue[] _values;
 	private readonly TKey[] _keys;
-	private readonly BTree<TValue, TKey>?[] _children;
+	private readonly BTree<TValue, TKey>[] _children;
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="BTree{TValue, TKey}"/> class.
@@ -73,7 +73,7 @@ public sealed class BTree<TValue, TKey> : ITraversableTree<TValue, TKey, int>
 
 		_values = new TValue[2 * m - 1];
 		_keys = new TKey[2 * m - 1];
-		_children = new BTree<TValue, TKey>?[isLeaf ? 0 : 2 * m];
+		_children = new BTree<TValue, TKey>[isLeaf ? 0 : 2 * m];
 	}
 
 	/// <summary>
@@ -89,7 +89,7 @@ public sealed class BTree<TValue, TKey> : ITraversableTree<TValue, TKey, int>
 	/// <summary>
 	/// Gets the children of the tree node.
 	/// </summary>
-	public ReadOnlySpan<BTree<TValue, TKey>?> Children => IsLeaf ? default : _children.AsSpan(..(N + 1));
+	public ReadOnlySpan<BTree<TValue, TKey>> Children => IsLeaf ? default : _children.AsSpan(..(N + 1));
 
 	/// <summary>
 	/// Gets the number of values of the tree node.
@@ -137,15 +137,15 @@ public sealed class BTree<TValue, TKey> : ITraversableTree<TValue, TKey, int>
 	{
 		for (var i = 0; i < N; i++)
 		{
-			if (!IsLeaf && _children[i] is not null)
-				foreach (var item in _children[i]!)
+			if (!IsLeaf && _children[i] is { } child)
+				foreach (var item in child)
 					yield return item;
 
 			yield return _values[i];
 		}
 
-		if (!IsLeaf && _children[N] is not null)
-			foreach (var item in _children[N]!)
+		if (!IsLeaf && _children[N] is { } lastChild)
+			foreach (var item in lastChild)
 				yield return item;
 	}
 
@@ -204,7 +204,7 @@ public sealed class BTree<TValue, TKey> : ITraversableTree<TValue, TKey, int>
 			while (i >= 0 && _comparer.Compare(_keys[i], key) > 0)
 				i--;
 
-			if (_children[i + 1]!.N == 2 * _m - 1)
+			if (_children[i + 1].N == 2 * _m - 1)
 			{
 				SplitChild(i + 1);
 
@@ -212,13 +212,13 @@ public sealed class BTree<TValue, TKey> : ITraversableTree<TValue, TKey, int>
 					i++;
 			}
 
-			_children[i + 1]!.InsertNonFull(value, key);
+			_children[i + 1].InsertNonFull(value, key);
 		}
 	}
 
 	private void SplitChild(int i)
 	{
-		var child = _children[i]!;
+		var child = _children[i];
 		var node = new BTree<TValue, TKey>(_m, _comparer, child.IsLeaf) { N = _m - 1 };
 
 		for (var j = 0; j < _m - 1; j++)
