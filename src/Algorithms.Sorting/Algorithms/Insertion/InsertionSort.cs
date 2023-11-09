@@ -30,17 +30,14 @@ public sealed class InsertionSort<TKey> : ISortingAlgorithm<TKey>
 	/// Sorts the elements of a sequence in ascending order according to a key.
 	/// </summary>
 	/// <param name="source">A sequence of values to order.</param>
-	/// <param name="start">The start index.</param>
-	/// <param name="end">The end index (exclusive).</param>
 	/// <param name="comparer">An <see cref="IComparer{T}"/> to compare keys.</param>
-	public static void Sort(IList<TKey> source, int start, int end, IComparer<TKey> comparer)
+	public static void Sort(Span<TKey> source, IComparer<TKey> comparer)
 	{
-		end = Math.Min(end, source.Count);
-		for (var i = Math.Max(start + 1, 1); i < end; i++)
+		for (var i = 1; i < source.Length; i++)
 		{
 			var item = source[i];
 			var j = i - 1;
-			for (; j >= start && comparer.Compare(source[j], item) > 0; j--)
+			for (; j >= 0 && comparer.Compare(source[j], item) > 0; j--)
 				source[j + 1] = source[j];
 
 			source[j + 1] = item;

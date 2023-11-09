@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.InteropServices;
 using Algorithms.Common.Collections;
 using Algorithms.Common.Comparers;
 using Algorithms.Common.Utilities;
@@ -148,7 +149,8 @@ file sealed class BurstTrie<T> : IEnumerable<T>
 	/// <param name="comparer">An <see cref="IComparer{T}"/> to compare keys.</param>
 	public void Sort(IComparer<char?> comparer)
 	{
-		InsertionSort<char?>.Sort(_keys, 0, _keys.Count, comparer);
+		var keys = CollectionsMarshal.AsSpan(_keys);
+		InsertionSort<char?>.Sort(keys, comparer);
 
 		foreach (var (_, bucket) in _buckets)
 			bucket.Sort(comparer);
