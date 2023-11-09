@@ -31,7 +31,7 @@ public sealed class SleepSort<TKey> : ISortingAlgorithm<TKey> where TKey : INumb
 			var s = double.CreateChecked(x.Key) - min;
 			if (min > max) s *= -1;
 
-			await Task.Delay(TimeSpan.FromSeconds(s), token);
+			await Task.Delay(TimeSpan.FromSeconds(s), token).ConfigureAwait(false);
 			queue.Enqueue(x.Element);
 		}).Wait();
 

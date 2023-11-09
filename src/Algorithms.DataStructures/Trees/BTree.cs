@@ -124,7 +124,7 @@ public sealed class BTree<TValue, TKey> : ITraversableTree<TValue, TKey, int>
 			root.SplitChild(0);
 
 			var i = _comparer.Compare(root._keys[0], key) < 0 ? 1 : 0;
-			root._children[i]?.InsertNonFull(value, key);
+			root._children[i].InsertNonFull(value, key);
 			return root;
 		}
 

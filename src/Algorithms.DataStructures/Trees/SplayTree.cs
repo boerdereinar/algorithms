@@ -26,6 +26,7 @@ public sealed class SplayTree : ITraversableTree
 public sealed class SplayTree<TValue, TKey> : ITraversableTree<TValue, TKey>
 {
 	private readonly IComparer<TKey> _comparer;
+	private readonly List<TValue> _values;
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="SplayTree{TValue, TKey}"/> class.
@@ -35,7 +36,7 @@ public sealed class SplayTree<TValue, TKey> : ITraversableTree<TValue, TKey>
 	/// <param name="comparer">The comparer used to compare keys.</param>
 	public SplayTree(TValue value, TKey key, IComparer<TKey> comparer)
 	{
-		Values = new(1) { value };
+		_values = new(1) { value };
 		Key = key;
 		_comparer = comparer;
 	}
@@ -43,7 +44,7 @@ public sealed class SplayTree<TValue, TKey> : ITraversableTree<TValue, TKey>
 	/// <summary>
 	/// Gets the values of the tree node.
 	/// </summary>
-	public List<TValue> Values { get; private set; }
+	public IReadOnlyList<TValue> Values => _values.AsReadOnly();
 
 	/// <summary>
 	/// Gets the key of the tree node.
@@ -73,7 +74,7 @@ public sealed class SplayTree<TValue, TKey> : ITraversableTree<TValue, TKey>
 
 		if (compare == 0)
 		{
-			root.Values.Add(value);
+			root._values.Add(value);
 			return root;
 		}
 
