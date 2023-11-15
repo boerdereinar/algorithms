@@ -2,11 +2,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{28B50868-0B38-4F6F-90F8-713C3C8C9E95}"
 	ProjectSection(SolutionItems) = preProject
 		stylecop.json = stylecop.json
+		nuget.config = nuget.config
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		README.md = README.md
 		LICENSE.txt = LICENSE.txt
 		src/Directory.Build.props = src/Directory.Build.props
+		src/Directory.Packages.props = src/Directory.Packages.props
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Common", "src/Algorithms.Common/Algorithms.Common.csproj", "{D0D05A95-0FDC-43EC-B036-A577E88DB25C}"
