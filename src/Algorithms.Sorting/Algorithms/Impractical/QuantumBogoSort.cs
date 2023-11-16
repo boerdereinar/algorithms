@@ -33,4 +33,4 @@ public sealed class QuantumBogoSort<TKey> : ISortingAlgorithm<TKey>
 /// <summary>
 /// Exception thrown when the universe ends.
 /// </summary>
-public sealed class EndOfTheUniverseException : Exception { }
+public sealed class EndOfTheUniverseException : Exception;

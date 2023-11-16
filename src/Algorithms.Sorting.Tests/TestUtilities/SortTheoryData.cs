@@ -1,5 +1,4 @@
 using System.Numerics;
-using Algorithms.Common.Utilities;
 
 namespace Algorithms.Sorting.Tests.TestUtilities;
 
@@ -54,7 +53,9 @@ public sealed class SortTheoryData<T> : TheoryData<IEnumerable<T>, IEnumerable<T
 	public void Add(IEnumerable<T> sorted, bool shuffle)
 	{
 		var expected = (_reverse ? sorted.Reverse() : sorted).ToArray();
-		var source = (shuffle ? _random.Shuffle(expected) : expected).ToArray();
+		var source = expected.ToArray();
+		if (shuffle)
+			_random.Shuffle(source);
 
 		AddRow(source, expected.ToArray(), _reverse);
 	}

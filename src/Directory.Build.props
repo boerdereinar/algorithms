@@ -1,15 +1,16 @@
 <Project>
 	<!-- Common Properties -->
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<ArtifactsPath>$(MSBuildThisFileDirectory)/artifacts</ArtifactsPath>
 	</PropertyGroup>
 
 	<!-- Common Files -->
 	<ItemGroup>
-		<AdditionalFiles Include="../../stylecop.json"/>
+		<AdditionalFiles Include="$(MSBuildThisFileDirectory)/../stylecop.json"/>
 	</ItemGroup>
 
 	<!-- Common Packages -->
@@ -48,11 +49,11 @@
 			</ItemGroup>
 
 			<ItemGroup>
-				<ProjectReference Include="../$(SourceProject)/$(SourceProject).csproj"/>
+				<ProjectReference Include="$(MSBuildThisFileDirectory)/$(SourceProject)/$(SourceProject).csproj"/>
 			</ItemGroup>
 
 			<ItemGroup Condition="'$(MSBuildProjectName)'!='Algorithms.Common.Tests'">
-				<ProjectReference Include="../Algorithms.Common.Tests/Algorithms.Common.Tests.csproj"/>
+				<ProjectReference Include="$(MSBuildThisFileDirectory)/Algorithms.Common.Tests/Algorithms.Common.Tests.csproj"/>
 			</ItemGroup>
 		</When>
 		<!-- Source Projects -->
@@ -62,7 +63,7 @@
 			</ItemGroup>
 
 			<ItemGroup Condition="'$(MSBuildProjectName)'!='Algorithms.Common'">
-				<ProjectReference Include="../Algorithms.Common/Algorithms.Common.csproj">
+				<ProjectReference Include="$(MSBuildThisFileDirectory)/Algorithms.Common/Algorithms.Common.csproj">
 					<PrivateAssets>all</PrivateAssets>
 				</ProjectReference>
 			</ItemGroup>

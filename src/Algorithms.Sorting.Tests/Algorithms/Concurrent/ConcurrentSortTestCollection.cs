@@ -4,6 +4,4 @@ namespace Algorithms.Sorting.Tests.Algorithms.Concurrent;
 /// Test collection for tests for concurrent sorts.
 /// </summary>
 [CollectionDefinition(nameof(ConcurrentSortTestCollection), DisableParallelization = true)]
-public sealed class ConcurrentSortTestCollection
-{
-}
+public sealed class ConcurrentSortTestCollection;
