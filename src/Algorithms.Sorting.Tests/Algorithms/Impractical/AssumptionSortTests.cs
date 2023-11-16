@@ -1,5 +1,4 @@
 using System.Numerics;
-using Algorithms.Common.Utilities;
 using Algorithms.Sorting.Algorithms.Impractical;
 using Algorithms.Sorting.Tests.TestUtilities;
 
@@ -54,12 +53,14 @@ public sealed class AssumptionSortTests : SortingAlgorithmTestBase<AssumptionSor
 	private static SortTheoryData<T> AssumptionData<T>() where T : INumber<T>
 	{
 		var random = new Random(42);
-		var shuffled = random.Shuffle(Enumerable.Range(0, 128)).ToArray();
+		var sorted = Enumerable.Range(0, 128).ToArray();
+		var shuffled = sorted.ToArray();
+		random.Shuffle(shuffled);
 
 		return new()
 		{
 			Enumerable.Empty<T>(),
-			{ Enumerable.Range(0, 128), Enumerable.Range(0, 128) },
+			{ sorted, sorted },
 			{ shuffled, shuffled },
 		};
 	}

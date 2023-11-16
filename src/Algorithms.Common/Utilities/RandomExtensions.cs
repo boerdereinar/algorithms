@@ -1,4 +1,3 @@
-using System.Diagnostics.Contracts;
 using Algorithms.Common.Collections;
 
 namespace Algorithms.Common.Utilities;
@@ -8,19 +7,6 @@ namespace Algorithms.Common.Utilities;
 /// </summary>
 public static class RandomExtensions
 {
-	/// <summary>
-	/// Shuffles the elements of a sequence.
-	/// </summary>
-	/// <param name="random">The random number generator.</param>
-	/// <param name="source">A sequence of values to shuffle.</param>
-	/// <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
-	/// <returns>An <see cref="IEnumerable{T}"/> whose elements are shuffled.</returns>
-	[Pure]
-	public static IEnumerable<TSource> Shuffle<TSource>(this Random random, IEnumerable<TSource> source)
-	{
-		return source.OrderBy(_ => random.Next());
-	}
-
 	/// <summary>
 	/// Shuffles the elements of a <see cref="KeyedArray{TElement,TKey}"/>.
 	/// </summary>

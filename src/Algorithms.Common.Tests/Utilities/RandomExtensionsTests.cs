@@ -9,19 +9,6 @@ namespace Algorithms.Common.Tests.Utilities;
 public sealed class RandomExtensionsTests
 {
 	/// <summary>
-	/// Tests if <see cref="RandomExtensions.Shuffle{TSource}(Random,IEnumerable{TSource})"/> returns a shuffled sequence.
-	/// </summary>
-	[Fact]
-	public void ShuffleIEnumerable_ReturnsShuffled()
-	{
-		var random = new Random(42);
-		var actual = random.Shuffle(Enumerable.Range(0, 100)).ToArray();
-
-		Assert.Equal(100, actual.Length);
-		Assert.NotEqual(Enumerable.Range(0, 100), actual);
-	}
-
-	/// <summary>
 	/// Tests if <see cref="RandomExtensions.Shuffle{TElement,TKey}(Random,KeyedArray{TElement,TKey})"/> returns a shuffled sequence.
 	/// </summary>
 	[Fact]
