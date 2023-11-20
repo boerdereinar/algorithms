@@ -111,7 +111,6 @@ public abstract class SortingAlgorithmTestBase<TSelf>
 	{
 		try
 		{
-#pragma warning disable xUnit2007
 			if (TryCreateInstance<int>(Type, Arguments) is { } i)
 				Assert.IsAssignableFrom(typeof(ISortingAlgorithm<int>), i.CreateComposite<int>());
 			else if (TryCreateInstance<uint>(Type, Arguments) is { } u)
@@ -122,7 +121,6 @@ public abstract class SortingAlgorithmTestBase<TSelf>
 				Assert.IsAssignableFrom(typeof(ISortingAlgorithm<string>), s.CreateComposite<string>());
 			else
 				Assert.Fail("Unsupported type!");
-#pragma warning restore xUnit2007
 		}
 		catch (NotSupportedException)
 		{
