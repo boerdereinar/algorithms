@@ -70,11 +70,8 @@ public sealed class FlashSort<TKey> : ISortingAlgorithm<TKey> where TKey : INumb
 			output[--bucketSize[keys[i]]] = item;
 		}
 
-		// BUG: https://github.com/DotNetAnalyzers/StyleCopAnalyzers/issues/3708
-#pragma warning disable SA1011
 		for (var i = 0; i < _buckets; i++)
 			InsertionSort<TKey>.Sort(output[bucketSize[i]..bucketSize[i + 1]]);
-#pragma warning restore SA1011
 
 		return output;
 	}

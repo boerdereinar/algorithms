@@ -187,11 +187,8 @@ public static class AmericanFlagSort
 			if (zeros == source.Length)
 				return;
 
-			// BUG: https://github.com/DotNetAnalyzers/StyleCopAnalyzers/issues/3708
-#pragma warning disable SA1011
 			for (var i = 0; i < count.Length - 1; i++)
 				Sort(source[offset[i]..offset[i + 1]], n / _radix, reverse);
-#pragma warning restore SA1011
 		}
 
 		private TKey MaxDivisor(TKey x)
@@ -331,11 +328,8 @@ public static class AmericanFlagSort
 				count[key]++;
 			}
 
-			// BUG: https://github.com/DotNetAnalyzers/StyleCopAnalyzers/issues/3708
-#pragma warning disable SA1011
 			for (var i = 0; i < count.Length - 1; i++)
 				Sort(source[offset[i]..offset[i + 1]], d + 1, reverse);
-#pragma warning restore SA1011
 		}
 	}
 }

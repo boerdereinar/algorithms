@@ -44,7 +44,9 @@ public sealed class BinaryHeap<TValue, TKey> : IHeap<TValue, TKey>
 	/// <param name="comparer">The comparer used to compare keys.</param>
 	/// <remarks>The source array will <b>not</b> be copied and all heap operations will be done in-place.</remarks>
 	public BinaryHeap(TValue[] source, Func<TValue, TKey> keySelector, IComparer<TKey> comparer)
-		: this(new KeyedArray<TValue, TKey>(source, keySelector, comparer)) { }
+		: this(new KeyedArray<TValue, TKey>(source, keySelector, comparer))
+	{
+	}
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="BinaryHeap{TValue, TKey}"/> class.
